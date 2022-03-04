@@ -1,0 +1,45 @@
+env:
+  api:
+
+
+sources:
+ cities:
+   - name: Odessa, Ukraine
+     lat: 46
+     lon: 30
+   - name: Osaka, Japan
+     lat: 34
+     lon: 135
+   - name: Oslo, Norway
+     lat: 59
+     lon: 10
+   - name: Shanghai, China
+     lat: 31
+     lon: 121
+   - name: Paramaribo, Suriname
+     lat: 5
+     lon: 55
+   - name: Paris, France
+     lat: 48
+     lon: 2
+   - name: Rangoon, Myanmar
+     lat: 16
+     lon: 96
+   - name: Reykjavk, Iceland
+     lat: 64
+     lon: 21
+   - name: Sao Paulo, Brazil
+     lat: -22
+     lon: -43
+   - name: Rome, Italy
+     lat: 41
+     lon: 12
+
+
+sinks:
+  first_step:
+    sink_path: "s3a://first-step-bucket/weather_data"
+  second_step:
+    sink_path: "s3a://second-step-bucket/max_weather_data_per_day"
+  third_step:
+    sink_path: "s3a://second-step-bucket/aggregated_weather_data"
